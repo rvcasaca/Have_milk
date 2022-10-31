@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprando Leite</title>
+</head>
+<body>
+    <h1>Patroa mandou, vc tem q ir:</h1>
+    <p>Sua esposa quer q vc vá as compras com o seguinte comando: trás uma garrafa de leite, se tiver batata trás 4.</p>
+    <p>Tinha batata?</p>
+    <select  id="tinha_ou_não" onchange="processa_resposta(this)">
+        <option>eae?</option>
+        <option value="0">Não</option>
+        <option value="1">Sim</option>
+    </select>
+    <div id="resposta"></div>
+    <script>
+        function processa_resposta(seleciona_elemento){
+            var texto = "tinha batata, trouxe as 4 garrafas de leite"
+            if (seleciona_elemento.value == 0){
+                texto = "não tinha batata, trouxe 1 garrafa de leite"
+            }
+            renderizar_resposta(texto)
+        }
+
+        function renderizar_resposta(texto){
+            document.getElementById("resposta").innerHTML = texto
+        }
+    </script>
+</body>
+</html>
